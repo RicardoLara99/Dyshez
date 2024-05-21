@@ -27,7 +27,6 @@ export default function LoginForm({ showResetPass }: LoginFormProps) {
 
       setTimeout(async() => {
         const data = await singIn(formData);
-        console.log('data front',data)
         if (!data) {
           toast({
             variant:'destructive',
