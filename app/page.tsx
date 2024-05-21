@@ -1,9 +1,13 @@
 "use client";
 import { Orders } from "@/components/orders/Orders";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function Home() {
   const pageSelected = usePathname();
+  const router=useRouter()
+  if(pageSelected.includes("/login")){
+    router.refresh()
+  }
   return (
     <main className="flex flex-row shadow-login min-h-full w-[100%] overflow-hidden h-full">
       <div className=" pl-6 pr-0 pb-0 min-h-[100vh] w-full lg:ml-16">
