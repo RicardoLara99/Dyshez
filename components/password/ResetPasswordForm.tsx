@@ -18,6 +18,10 @@ export const ResetPasswordForm = ({ showResetPass }: LoginFormProps) => {
       setShowMessage(
         "Correo enviado con exito. Por favor verifica tu bandeja de entrada."
       );
+      
+      setTimeout(() => {
+        showResetPass(false)
+      }, 3000);
     } else {
       setShowMessage(
         "Ha ocurrido un error inesperado, por favor. Vuelve a intentarlo mas tarde."

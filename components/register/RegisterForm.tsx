@@ -72,7 +72,6 @@ export const RegisterForm = () => {
       title:'Creando cuenta ',
       description:'Estás a nada de formar parte de nuestra gran familia 😁 ',
       className: "text-primary"
-
     })
 
     const data=await signup(userObject)
@@ -96,7 +95,7 @@ export const RegisterForm = () => {
 
     })
     setTimeout(() => {
-      router.push('/')
+      router.refresh()
     }, 1000);
   };
 

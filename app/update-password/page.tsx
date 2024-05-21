@@ -24,12 +24,18 @@ export default function Index() {
       setError(
         "Contraseñas diferentes, por favor ingresa una contraseña segura"
       );
+      return 
     }
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get("code");
-    setError("Actualizando contraseña, enseguida se te redirigira al login.");
     const data = await updatePasswordForEmail(code || "", object.password);
+    toast({
+      variant:'destructive',
+      title:'Actualizando contraseña  😎',
+      description:'',
+      className: "text-primary bg-primary-process-bg"
 
+    })
     if (!data) {
       setError(
         "Ha ocurrido un error inesperado, por favor intentar nuevamente mas tarde."
