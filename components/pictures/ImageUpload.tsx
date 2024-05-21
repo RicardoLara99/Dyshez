@@ -22,7 +22,6 @@ const ImageUploader: React.FC<ImageProps> = ({ handleUpdateImageList }) => {
         newFiles.map((file) => toBase64(file))
       );
       const data = await uploadImages(base64Files);
-      console.log("data upload", data);
       if (data) {
         handleUpdateImageList();
       }

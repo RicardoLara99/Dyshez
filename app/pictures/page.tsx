@@ -33,7 +33,6 @@ export default function Index() {
         setIsLoading(true);
         const data = await getUserImagesSrc();
         if (data && data?.length) {
-          console.log('Data images: ',data)
           setImageList(data);
         }
         setIsLoading(false);

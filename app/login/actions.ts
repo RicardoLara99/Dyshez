@@ -40,7 +40,7 @@ export async function signup(userData: userRegister) {
   try {
     const supabase = createClient();
 
-    const { data, error } = await supabase.auth.signUp({
+    const { data, error, ...props } = await supabase.auth.signUp({
       email: userData.email,
       password: userData.password,
       options: {
@@ -51,7 +51,6 @@ export async function signup(userData: userRegister) {
       },
     });
 
-    console.log('datos',data,data?.user?.user_metadata.provider,error)
     if (error) {
       return false;
     }
@@ -100,7 +99,7 @@ export const resetPasswordForEmail = async (email: string) => {
     );
 
     if (error) {
-      return "Ocurrio un erro al mandar el correo, por favor intenta mas tarde";
+      return false
     }
 
     return data;

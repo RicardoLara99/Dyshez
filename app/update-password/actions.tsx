@@ -14,7 +14,6 @@ export const updatePasswordForEmail = async (
         token: code,
       },
     });
-    console.log('data login', data,error)
     if (error) {
       return false;
     }
